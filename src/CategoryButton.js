@@ -1,6 +1,7 @@
 import data from './data'
+import './CategoryButton.css'
 
-export default function Button({ categoryName, categoryCount, setFilteredData }) {
+export default function CategoryButton({ categoryName, categoryCount, setFilteredData }) {
   const filterData = () => {
     const newFilteredData = [...data.filter((obj) => {
       return(obj.category === categoryName);
@@ -8,7 +9,7 @@ export default function Button({ categoryName, categoryCount, setFilteredData })
     setFilteredData(newFilteredData);
   }
   return(
-    <button onClick={filterData}>
+    <button className="CategoryButton" onClick={filterData}>
       <h3>{categoryName}</h3>
       <p>{categoryCount}</p>
     </button>

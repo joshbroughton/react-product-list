@@ -1,0 +1,4 @@
+.CategoryButtons {
+    display: flex;
+    flex-wrap: wrap;
+}
