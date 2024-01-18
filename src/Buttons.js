@@ -1,5 +1,12 @@
 import Button from './Button';
 
-export default function Buttons({categoriesUnique}) {
-  return(categoriesUnique.map(categoryName => <Button categoryName={categoryName}></Button>));
+export default function Buttons({ categoriesWithCount, setFilteredData }) {
+  return(
+    categoriesWithCount.map(obj => {
+    return(<Button
+      categoryName={obj.name}
+      categoryCount={obj.count}
+      setFilteredData={setFilteredData}
+      ></Button>);
+  }));
 };

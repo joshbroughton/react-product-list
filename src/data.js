@@ -16,10 +16,10 @@ const categoriesWithCounts = data.reduce((obj, product) => {
   return obj;
 }, {})
 
-const namesAndCategories = categoriesUnique.map(name => {
+const categoriesWithCount = categoriesUnique.map(name => {
   return {name: name, count: categoriesWithCounts[`${name}`] }
 })
 
 export default data;
 
-export { categoriesAll, categoriesUnique, namesAndCategories }
+export { categoriesAll, categoriesUnique, categoriesWithCount }
