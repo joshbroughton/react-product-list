@@ -1,7 +1,7 @@
 import CategoryButton from './CategoryButton';
 import './CategoryButtons.css'
 
-export default function CategoryButtons({ categoriesWithCount, setFilteredData }) {
+export default function CategoryButtons({ categoriesWithCount, setFilteredData, selectedCategory, setSelectedCategory }) {
   return(
     <div className='CategoryButtons'>
       {categoriesWithCount.map(obj => {
@@ -9,6 +9,8 @@ export default function CategoryButtons({ categoriesWithCount, setFilteredData }
         categoryName={obj.name}
         categoryCount={obj.count}
         setFilteredData={setFilteredData}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
         ></CategoryButton>);
     })}
     </div>

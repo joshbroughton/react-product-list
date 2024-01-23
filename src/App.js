@@ -6,13 +6,15 @@ import data, { categoriesAll, categoriesUnique, categoriesWithCount } from './da
 
 function App() {
   const [filteredData, setFilteredData] = useState(data);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
     <div className='App'>
       <CategoryButtons
         categoriesWithCount={categoriesWithCount}
         setFilteredData={setFilteredData}
-        filteredData={filteredData}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       ></CategoryButtons>
       <Products data={filteredData}></Products>
     </div>
