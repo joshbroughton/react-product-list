@@ -20,6 +20,10 @@ const categoriesWithCount = categoriesUnique.map(name => {
   return {name: name, count: categoriesWithCounts[`${name}`] }
 })
 
+categoriesWithCount.push({name: "All", count: categoriesWithCount.reduce((runningSum, obj) => {
+  return(runningSum + obj.count);
+}, 0)})
+
 export default data;
 
 export { categoriesAll, categoriesUnique, categoriesWithCount }

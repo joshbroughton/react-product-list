@@ -3,10 +3,14 @@ import './CategoryButton.css'
 
 export default function CategoryButton({ categoryName, categoryCount, setFilteredData }) {
   const filterData = () => {
-    const newFilteredData = [...data.filter((obj) => {
-      return(obj.category === categoryName);
-    })];
-    setFilteredData(newFilteredData);
+    if (categoryName === "All") {
+      setFilteredData(data)
+    } else {
+      const newFilteredData = [...data.filter((obj) => {
+        return(obj.category === categoryName);
+      })];
+      setFilteredData(newFilteredData);
+    }
   }
   return(
     <button className="CategoryButton" onClick={filterData}>
